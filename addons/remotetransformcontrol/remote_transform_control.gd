@@ -1,5 +1,10 @@
 extends Control
+## A node that follows a point in a 2D or 3D scene to allow you to have it in a seperate canvas layer.
+## Instead of linking directly to the node, instead add a marker above/near the node and connect this instead. 
+## It will make it easier to edit where you want the control node to appear.
 
+## The path to the node that the Control node will follow.
+## This must be a Node2D or Node3D derived class. 
 @export var node_path : NodePath:
 	set(value):
 		await tree_entered
@@ -12,16 +17,18 @@ extends Control
 		else:
 			push_error("Error: Node must derive Node2D or Node3D")
 
+## Set the anchor mode as the same from Camera2D, either from the top_left or from the center of the position
 @export var anchor_mode:Camera2D.AnchorMode = Camera2D.ANCHOR_MODE_DRAG_CENTER
+
+## Stores the node that the control node is following.
 var node : Node 
+
+## Stores if the node that is being followed is 3D or not. 
 var is_3D := false
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if node:
 		var top_left_pos:Vector2 = get_node_viewport_position()
@@ -31,6 +38,7 @@ func _process(delta):
 			global_position = top_left_pos - get_rect().size/2
 	pass
 
+## Gets the screen position of the node, either in 2D or 3D
 func get_node_viewport_position():
 	var screen_pos := Vector2.ZERO
 	if is_3D:
