@@ -1,0 +1,16 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1712139351
+icon.svg::CompressedTexture2D::3205648251462250879::1712087063::1712090199::1::::<><>::
+::res://addons/::1712139179
+::res://addons/remotetransformcontrol/::1712139332
+icon.svg::CompressedTexture2D::4847186310280533814::1712091281::1712139181::1::::<><>::
+plugin.cfg::TextFile::-1::1712139063::0::1::::<><>::
+remotetransformcontrol.gd::GDScript::-1::1712139332::0::1::::<>EditorPlugin<>::
+RemoteTransformControl.svg::CompressedTexture2D::6834855966294765001::1712139111::1712139181::1::::<><>::
+remote_transform_control.gd::GDScript::-1::1712091480::0::1::::<>Control<>::
+remote_transform_control.tscn::PackedScene::699376016257731966::1712139256::0::1::::<><>::res://addons/remotetransformcontrol/remote_transform_control.gd
+::res://Testing/::1712139332
+TestCharacter3D.gd::GDScript::-1::1712090681::0::1::::<>CharacterBody3D<>::
+test_character.gd::GDScript::-1::1712089341::0::1::::<>CharacterBody2D<>::
+test_scene_2d.tscn::PackedScene::6220119488638575502::1712139332::0::1::::<><>::res://Testing/test_character.gd<>uid://blw3s8pn5jdsh::::res://icon.svg
+test_scene_3d.tscn::PackedScene::7975690945726123385::1712139179::0::1::::<><>::res://addons/remotetransformcontrol/remote_transform_control.gd<>res://Testing/TestCharacter3D.gd<>uid://blw3s8pn5jdsh::::res://icon.svg

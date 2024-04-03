@@ -1,0 +1,12 @@
+Marker3D
+Label
+ColorRect
+Sprite3D
+CollisionShape3D
+CharacterBody3D
+Camera3D
+Sprite2D
+CollisionShape2D
+CharacterBody2D
+RemoteControlNode
+CanvasLayer

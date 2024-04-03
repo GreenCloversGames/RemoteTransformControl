@@ -1,0 +1,62 @@
+[gd_scene load_steps=5 format=3 uid="uid://dlvqp2dfgh410"]
+
+[ext_resource type="Script" path="res://addons/remotetransformcontrol/remote_transform_control.gd" id="1_ad2b7"]
+[ext_resource type="Script" path="res://Testing/TestCharacter3D.gd" id="2_y0f7i"]
+[ext_resource type="Texture2D" uid="uid://blw3s8pn5jdsh" path="res://icon.svg" id="3_qhd4w"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_mxyki"]
+
+[node name="TestScene3D" type="Node3D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="RemoteControlNode" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -182.0
+offset_top = -8.0
+offset_right = 182.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ad2b7")
+node_path = NodePath("../../TestCharacter3D/Sprite3D/Marker3D")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/RemoteControlNode"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.321569)
+
+[node name="Label" type="Label" parent="CanvasLayer/RemoteControlNode"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Testing Testing 123"
+horizontal_alignment = 1
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.877583, -0.229849, 0.420735, 0, 0.877583, 0.479426, -0.479426, -0.420736, 0.770151, 1.68294, 1.9177, 3.0806)
+
+[node name="TestCharacter3D" type="CharacterBody3D" parent="."]
+script = ExtResource("2_y0f7i")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TestCharacter3D"]
+shape = SubResource("SphereShape3D_mxyki")
+
+[node name="Sprite3D" type="Sprite3D" parent="TestCharacter3D"]
+texture = ExtResource("3_qhd4w")
+
+[node name="Marker3D" type="Marker3D" parent="TestCharacter3D/Sprite3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.795403, 0)
